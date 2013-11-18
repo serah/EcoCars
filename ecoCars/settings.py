@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+CURRENT_DIR  = os.path.dirname(__file__)
+TEMPLATE_DIRS = (os.path.join(CURRENT_DIR, 'templates'),)
+STATICFILES_DIRS = (os.path.join(CURRENT_DIR, 'static'),)
+STATIC_ROOT = os.path.join(PROJECT_PATH, '../static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -26,7 +30,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -35,7 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    #'django.contrib.staticfiles',
+    'tabs',
+    'ecoCars',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,8 +62,11 @@ WSGI_APPLICATION = 'ecoCars.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ecocars',
+        'USER': 'serah',
+        'PASSWORD': '272',
+        'HOST': 'localhost',
     }
 }
 
@@ -75,6 +83,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+            'django.core.context_processors.static',
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
