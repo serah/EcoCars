@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Electric Cars | Home</title>
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="/static/css/normalize.css">
+  <link rel="stylesheet" href="/static/css/foundation.css">
+  <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+
+  <script src="/static/js/vendor/custom.modernizr.js"></script>
+  <style>
+    body {
+      background-image:url('/static/img/grey_background.jpg');
+      }
+</style>
+</head>
+<style>
+
+ #itemHover{
+      border-radius:5px;
+}
+
+ #itemHover {
+  border: 0px solid;
+  border-color:grey;
+    }
+
+ #itemHover:hover {
+  border: 3px solid;
+  border-color:  #CC1100;
+  opacity: 0.9
+    }
+  .panel{
+     background-color:white;
+    }
+   #panel-head{
+    color: #CC1100;
+    font-family: 'Days One', sans-serif;
+    }
+   .container{
+    margin-top:40px;
+    margin-left:30px;
+    margin-right:30px;
+    }
+</style>
+<body>
+
+  <!-- Header and Nav -->
+  <nav class="top-bar" style="top:0px;margin-top:0px;padding-top:0px;" >
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1>
+          <a href="{% url 'home' %}" >
+            Eco Cars
+          </a>
+        </h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+          <ul class="right">
+           <li><a href="" >Home</a></li>
+           <li class="divider"></li>
+           <li><a href="" >About</a></li>
+        <li class="has-form">
+      <form>
+          <div class="row collapse">
+             <div class="small-8 columns">
+                 <input type="text">
+             </div>
+             <div class="small-4 columns">
+                <a href="#" class="alert button" style="background-color: #CC1100;">Search</a>
+             </div>
+          </div>
+      </form>
+    </li>
+    </ul>
+    </section>
+  </nav>
+
+
+  <!-- End Header and Nav -->
+
+  <!-- Main Grid Section -->
+
+  <div class="container">
+    <div  class="large-4 columns" >
+      <a href="{% url 'home' %}">
+          <div id="itemHover" class="panel">
+        <h5 id="panel-head">Count & Trends</h5>
+        <img id="itemHover1" src="static/img/counts_trends.png" style="padding:5px;"></img>
+          <p><i>Total number of electric cars in USA and their trends</i></p>
+      </div>
+      </a>
+    </div>
+
+    <div  class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Companies</h5>
+        <img id="itemHover1" src="static/img/companies.jpg" style="padding:10px;"></img>
+        <p>
+          List of companies manufacturing electric vehicles
+        </p>
+      </div>
+    </div>
+
+    <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Consumption</h5>
+        <img id="itemHover1" src="static/img/consumption.png" style="padding:10px;"></img>
+        <p>Changes in consumption of electricity</p>
+      </div>
+    </div>
+
+   </div>
+
+
+  <div class="container">
+
+        <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Electricity sources</h5>
+        <img id="itemHover1" src="static/img/electricity_sources.png" style="padding:10px;"></img>
+        <p> Different sources of electricity in USA
+        </p>
+      </div>
+      </div>
+    <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Savings Calculator</h5>
+        <img id="itemHover1" src="static/img/calculator.png" style="padding:10px;"></img>
+        <p>
+          Calculate how much you save by driving an electric car
+        </p>
+      </div>
+    </div>
+    <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Demand in electricity</h5>
+        <img id="itemHover1" src="static/img/demand_electricity.gif" style="padding:10px;"></img>
+        <p>Is there an effect on demand in electricity due to electric cars</p>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Twitter feeds</h5>
+        <img id="itemHover1" src="static/img/twitter.png" style="padding:10px;"></img>
+        <p>View more, what people talk about Electric cars around the world</p>
+    </div>
+    </div>
+
+    <div class="large-4 columns">
+      <div id="itemHover" class="panel" >
+        <img id="itemHover1" src="static/img/advantages.jpg" style="padding:10px;"></img>
+        <h5 id="panel-head">Advantages of electric cars</h5>
+        <p></p>
+      </div>
+    </div>
+    <div class="large-4 columns" >
+      <div id="itemHover" class="panel" >
+        <h5 id="panel-head">Total gas saved</h5>
+        <img id="itemHover1" src="static/img/gas_saved.png" style="padding:10px;"></img>
+        <p>Yearly report of consumption of gasoline since the introduction of electric cars.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- End Grid Section -->
+
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-7 columns">
+          <p>&copy; 2013 ecocars</p>
+        </div>
+        <div class="large-5 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Development Team</a></li>
+            <li><a href="#">Reference</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+  document.write('<script src=/static/js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+  </script>
+  <script src="/static/js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+</body>
+</html>
