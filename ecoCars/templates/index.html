@@ -12,6 +12,7 @@
 
 
   <script src="/static/js/vendor/custom.modernizr.js"></script>
+                    {% load chartit %}
 
 </head>
 <body>
@@ -32,11 +33,11 @@
 			<div class="row">
 				<div class="large-12 columns">
 					<div class="panel">
-						<ul>
-                        {% for tweet, user in context_instance.items %}
-                        <li><b>{{ user }}:&nbsp </b><em>{{ tweet }}</em></li>
-                        {% endfor %}
-                        </ul>
+            <div id="container">{{ chart|load_charts:"container" }}
+                {% for t in data %}
+                {{ t.eleven }}
+                {% endfor %}
+            </div>
 					</div>
 				</div>
 			</div>
