@@ -17,3 +17,6 @@ class Mileage(models.Model):
     costfor25 = models.CharField(max_length=10)
     annualcost = models.CharField(max_length=10)
 
+class GasRate(models.Model):
+    state = models.CharField(max_length=50)
+    price = models.FloatField()

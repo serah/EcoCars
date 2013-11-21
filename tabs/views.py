@@ -2,7 +2,8 @@
 import twython
 from django.shortcuts import render_to_response
 from chartit import DataPool, Chart
-from tabs.models import CompanyWiseCarCount
+from tabs.models import CompanyWiseCarCount, GasRate
+from django import forms
 
 TWITTER_APP_KEY = 'F0kcD4RLRQSTAyOIXlgTbg'
 TWITTER_APP_KEY_SECRET = '5cztY0PmgmgYZ8qdmDZGyUc4VbzsnQOTa1b34nqdg'
@@ -59,7 +60,7 @@ def sources(request):
 
 def twitter(request):
     t = twython.Twython(app_key=TWITTER_APP_KEY,
-                        app_secret=TWITTER_APP_KEY_SECRET,
+                        app_secret=TWITTERyp_APP_KEY_SECRET,
                         oauth_token=TWITTER_ACCESS_TOKEN,
                         oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
@@ -76,4 +77,15 @@ def twitter(request):
     return render_to_response('twitter.html', {'tweets': tweet_list})
 
 def calculator(request):
-    return render_to_response('calculator.html')
+    state_db = GasRate.objects.values('state')
+    states = []
+    for s in state_db:
+        states.append(s['state'])
+    if request.method == 'POST':
+        state = request.form['state']
+        miles = request.form['miles']
+        cartype = request.form['type']#keep value 25 or 15
+        price = db_session.query(GasRate).filter(GasRate.state == state).price
+        print price
+        cost = (miles/cartype) * 4 *4 * 52
+    return render_to_response('calculator.html', {'states':states})

@@ -100,8 +100,8 @@
             margin: 0px;
             float: left;
             width: 28%;
-            min-height: 100%;
-            background-image: url('/static/img/background.jpg');
+            min-height: 100px;
+            background-image: url('/static/img/grey_wash_wall.png');
            box-shadow: -3px 170px 4px 1px #000000 inset;
         }
         #col2
@@ -129,13 +129,12 @@
         <a target="_blank" href="#">
             <img width="34" height="33" border="0" alt="youtube" src="/static/img/youtube.gif"></a>
     </div>
-    <div id="container1">
         <div id="col1">
             <div class="container">
                 <ul class="side-nav">
                     <img src="/static/img/green-car.png" height="200" width="200" /><br />
                     <br />
-                    <li id="liCount" class="selected"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
+                    <li id="liCount"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
                         &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
                     <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
                         &nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
@@ -160,7 +159,6 @@
             {% block body %}
             {% endblock %}
         </div>
-    </div>
     <script>
 
         document.write('<script src=../static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
