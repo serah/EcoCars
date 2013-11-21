@@ -1,10 +1,37 @@
 {% extends 'layout.html' %}
 
-{% block body %}
+        {% block js %}
+        <script type='text/javascript'>
+$(function()
+{
+	$('.scroll-pane').jScrollPane();
+});
 
-           {% for tweet, user in tweets.items %}
-        <p><b>{{ user }}: &nbsp</b>{{ tweet }}</p>
+$(window).load(function(){
+$('#wcont1b ul').jScrollPane();
+});
+</script>
+        {% endblock %}
+
+    {% block style %}
+<style>
+    #box{
+    margin: 100px 100px;
+    }
+    #wcont1b ul{ max-height: 400px; overflow-y: scroll; }
+</style>
+    {% endblock %}
+
+{% block body %}
+<div class="six columns" id="wcont1b" id="box" >
+<ul class="pricing-table" >
+    <li class="title">Tweet tweet!</li>
+      {% for tweet, user in tweets.items %}
+        <li class="price"><b>{{ user }}: &nbsp</b>{{ tweet }}</li>
         {% endfor %}
+</ul>
+</div>
+
 
 
 {% endblock %}

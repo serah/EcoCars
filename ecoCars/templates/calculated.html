@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+    {% block style %}
+<style>
+    #box{
+    margin: 100px 200px;
+    }
+</style>
+    {% endblock %}
+
+
+{% block body %}
+<ul class="pricing-table" id="box">
+    <li class="title">Your yearly savings!</li>
+    <li class="price">${{ saving }}</li>
+</ul>
+
+
+{% endblock %}

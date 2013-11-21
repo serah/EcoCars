@@ -8,27 +8,61 @@
     <title>EcoCars</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/foundation.css" />
+    <link type="text/css" href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
         type='text/css'>
-    <script src="../static/js/vendor/custom.modernizr.js"></script>
+    <script src="/static/js/vendor/custom.modernizr.js"></script>
+
+    <link href="/static/css/basic.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/basic_ie.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/demo.css" rel="stylesheet" type="text/css" />
+    <script src="/static/js/basic.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.simplemodal.js" type="text/javascript"></script>
+    <script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+
+{% block js %}
+{% endblock %}
+
     <script type="text/javascript">
         function setCurrentTab(selectedTab) {
             $('li').removeClass('selected');
             $('#' + selectedTab).addClass('selected');
         }
     </script>
+    {% block style %}
+    {% endblock %}
     <style>
-        body
+ body
         {
             font-family: 'Electrolize' , sans-serif;
+			height: 900px;
+            max-height: 900px;
         }
+
+        #itemHover
+{
+border: 3px solid;
+border-color: grey;
+background: white;
+border-radius: 5px;
+}
+
+#itemHover:hover
+{
+border: 3px solid;
+border-color: #CC1100;
+opacity: 0.9;
+}
+
         li .panel1
         {
             border-radius: 10px;
             font-family: 'Electrolize' , sans-serif !important;
             width: 80%;
             color: #00CC00;
-            background: url(/static/img/tabs.jpg);
+            background: url(/static/img/white_plaster.png) repeat;
         }
         .panel1:hover
         {
@@ -41,39 +75,6 @@
         {
             background: #D9D9D9;
         }
-        li:
-        {
-        }
-        #socialpanel
-        {
-            position: absolute;
-            background: url(/static/img/socialmedia-bg.gif) no-repeat left top;
-            width: 34px;
-            height: 192px;
-            padding: 25px 3px 0px 6px;
-            margin: 0px 0px 0px 0px;
-            z-index: 900;
-            overflow: hidden;
-            font: 12px Arial,Helvetica,sans-serif;
-        }
-        
-        .selected
-        {
-            font-weight: bolder;
-        }
-        .selected > .panel1
-        {
-            color: #d9d9d9;
-        }
-        
-        body
-        {
-            background: url(/static/img/white_plaster.png) repeat ;
-            box-shadow: 1px 1px 4px 1px #000000 inset;
-            max-height: 700px;
-        }
-        
-        
         #socialpanel a
         {
             display: block;
@@ -94,74 +95,83 @@
             height: 100%;
         }
         
-        
-        #col1
+        .side-nav{
+            font-size:15px;
+        }
+         #col1
         {
             margin: 0px;
+			height: 100%;
             float: left;
-            width: 28%;
-            min-height: 100px;
-            background-image: url('/static/img/grey_wash_wall.png');
-           box-shadow: -3px 170px 4px 1px #000000 inset;
+            width: 25%;
+            min-height: 900px;
+            background: url(/static/img/white_plaster.png) repeat;
+            box-shadow: -3px 0px 4px 1px  #E5E4E2 inset;
         }
         #col2
         {
-            width: 72% !important;
-            position:relative;
-            float:right;
+            width: 75% !important;
+            position: relative;
+            float: right;
             height: 100%;
             margin-left: 0px;
-            min-height: 100px;
-             font: 11px Arial,Helvetica,sans-serif;
+            min-height: 900px;
+            font: 11px Arial,Helvetica,sans-serif;
         }
+        #line{
+        width:70%;
+}
     </style>
 </head>
 <body>
-    <div id="socialpanel" style="position: fixed; top: 200px; right: 0px;">
-        <a target="_blank" href="#/">
-            <img width="34" height="33" border="0" alt="blogger" src="/static/img/blogger.gif"></a>
-        <a target="_blank" href="#">
-            <img width="34" height="33" border="0" alt="facebook" src="/static/img/facebook.gif"></a>
-        <a target="_blank" href="#">
-            <img width="34" height="33" border="0" alt="linkedin" src="/static/img/linkedin.gif"></a>
-        <a target="_blank" href="#">
-            <img width="34" height="33" border="0" alt="twitter" src="/static/img/twitter.gif"></a>
-        <a target="_blank" href="#">
-            <img width="34" height="33" border="0" alt="youtube" src="/static/img/youtube.gif"></a>
-    </div>
         <div id="col1">
-            <div class="container">
+            <div class="container" style="padding-left:50px;">
                 <ul class="side-nav">
                     <img src="/static/img/green-car.png" height="200" width="200" /><br />
-                    <br />
+                    <br /><hr id="line" />eMail, eShopping, eBiz... <br/> why not eCars?<hr id="line"/>
                     <li id="liCount"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
+                         <a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
                     <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
+                           <a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
                     <li id="liAdvantages"><a href="Advantages.htm" class="panel1" onclick='javascript:setCurrentTab("liAdvantages");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
+                           <a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
                     <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
+                           <a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
                     <li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>
+                           <a href="{% url 'demand' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>
                     <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
+                           <a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
                     <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Total Savings</a> </li>
+                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Total Savings</a> </li>
                     <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
+                           <a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
                     <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
-                        &nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                           <a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                    <li id="liGasStations"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liGasStattions");'>
+                           <a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Charging Stations</a> </li>
                 </ul>
             </div>
         </div>
+
+        		<div id="col2">
+            <br />
+            <div class="row">
+                <div style="float: right;">
+                        <a href="{% url 'about' %}" >&nbsp About </a>
+                </div>
+                <div style="float: right;">
+                    <a href="{% url 'home' %}">Home /</a>
+                </div>
+            </div>
+
+
         <div id="col2">
+            <hr/>
             {% block body %}
             {% endblock %}
         </div>
     <script>
-
-        document.write('<script src=../static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
+        document.write('<script src=/static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
     <script src="../static/js/foundation.min.js"></script>
     <script>        $(document).foundation(); </script>
 </body>

@@ -1,23 +1,87 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+{% extends 'layout.html'%}
 
-<head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Eco Cars</title>
+{% block body %}
+            <div class="large-12 columns">
+                <div class="panel">
+                    <center>
+                        <h3  style="font: 12px Electrolize;">
+                            Current Car Count (until October 2013) : 214099</h3>
+                    </center>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="large-6 columns">
+                    <div id='basic-modal-1'>
+                        <a href='#' class='basic'>
+                            <div id="Div1" class="">
+                                <center>
+                                    <img id="" width="300px" height="300px" src="../static/img/CountnTrend.png" style="padding: 10px;"></img>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="large-6 columns">
+                    <div id='basic-modal-2'>
+                        <a href='#' class='basic'>
+                            <div id="Div3" class="">
+                                <center>
+                                    <img id="Img2" width="300px" height="300px" src="../static/img/gasolineCars.png"
+                                        style="padding: 10px;"></img>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <center>
+                    <div class=" ">
+                        <div id='basic-modal-3'>
+                            <a href='#' class='basic'>
+                                <div id="Div4" class="">
+                                    <center>
+                                        <img id="Img3" width="300px" height="300px" src="../static/img/GrowthPerYear.png"
+                                            style="padding: 10px;"></img>
+                                    </center>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div id="basic-modal-content-1" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img1" width="500px" height="450px" src="../static/img/CountnTrend.png" style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <div id="basic-modal-content-2" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img4" width="500px" height="450px" src="../static/img/gasolineCars.png"
+                            style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <div id="basic-modal-content-3" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img5" width="500px" height="450px" src="../static/img/GrowthPerYear.png"
+                            style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <!-- preload the images -->
+            <div style='display: none'>
+                <img src="../static/img/x.png" />
+            </div>
+        </div>
+    </div>
 
-
-  <script type="text/javascript" src="/static/Highcharts-3.0.7/js/highcharts.js"></script>
-  <script type="text/javascript" src="/static/js/exporting.js"></script>
-  <script type="text/javascript" src="/static/js/jquery.js"></script>
-
-
-                    <strong>{% load chartit %}</strong>
-                    <strong>{{ cht|load_charts:"chart" }}</strong>
-
-</head>
-<body>
-    <div id="chart"></div>
-    <div class="chart"></div>
-</body>
+{% endblock %}

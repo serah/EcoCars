@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+            <hr />
+            <div class="large-12 columns" style="font: 12px Electrolize;">
+                <div id="itemHover" class="panel" style="background:  #f2f2f2;" >
+                    <center>
+                        <h3  style="font: 12px Electrolize;">
+                            Ruling companies in the world of electric cars :
+                        </h3>
+                        <ul class="side-nav">
+                            <li>Chevrolet</li>
+                            <li>Nissan</li>
+                            <li>Tesla</li>
+                            <li>Ford</li>
+                            <li>Toyota</li>
+                            <li>Mitsubishi</li>
+                            <li>Honda</li>
+                            <li>Smart</li>
+                            <li>Fiat</li>
+                        </ul>
+                    </center>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="large-6 columns">
+                    <div id='basic-modal-1'>
+                        <a href='#' class='basic'>
+                            <div id="Div1" class="">
+                                <center>
+                                    <img id="" width="300px" height="300px" src="../static/img/CarCompanies_2011.png"
+                                        style="padding: 10px;"></img>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="large-6 columns">
+                    <div id='basic-modal-2'>
+                        <a href='#' class='basic'>
+                            <div id="Div3" class="">
+                                <center>
+                                    <img id="Img2" width="300px" height="300px" src="../static/img/CarCompanies_2012.png"
+                                        style="padding: 10px;"></img>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <center>
+                    <div class=" ">
+                        <div id='basic-modal-3'>
+                            <a href='#' class='basic'>
+                                <div id="Div4" class="">
+                                    <center>
+                                        <img id="Img3" width="300px" height="300px" src="../static/img/CarCompanies_2013.png"
+                                            style="padding: 10px;"></img>
+                                    </center>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div id="basic-modal-content-1" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img1" width="500px" height="450px" src="../static/img/CarCompanies_2011.png"
+                            style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <div id="basic-modal-content-2" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img4" width="500px" height="450px" src="../static/img/CarCompanies_2012.png"
+                            style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <div id="basic-modal-content-3" style="display: none">
+                <div id="itemHover" class="panel">
+                    <center>
+                        <img id="Img5" width="500px" height="450px" src="../static/img/CarCompanies_2013.png"
+                            style="padding: 10px;"></img>
+                    </center>
+                </div>
+            </div>
+            <!-- preload the images -->
+            <div style='display: none'>
+                <img src="../static/img/x.png" />
+            </div>
+        </div>
+    </div>
+{% endblock %}

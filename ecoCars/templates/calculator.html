@@ -1,20 +1,51 @@
 {% extends 'layout.html' %}
 
+{% block style %}
+
+<style>
+    #box{
+    margin: 100px 200px;
+    }
+</style>
+{% endblock %}
+
 {% block body %}
+<form action="/calculator/" method="post" class="custom">
+ {% csrf_token %}
+    <fieldset id="box">
+     <legend><h2>Savings Calculator</h2></legend>
+    <div class="row">
+        <div class=" large-4 columns">
+        <label for="customDropdown1"><h4>Select your State</h4></label>
+        <select id="customDropdown1" class="medium" name='state'>
+        <option value="None">State</option>
+        {% for state in states %}
+            <option value="{{ state }}">{{ state }}</option>
+        {% endfor %}
+    </select>
+    </div>
+    </div>
+    <div class="row">
+    <div class="large-4 columns" >
+        <label class="left"><h4>Enter miles / week</h4></label>
+        <input name='miles' placeholder='Miles / week' required/><br/><br/>
+     </div>
+      </div>
+     <div class="row">
+        <div class=" large-4 columns">
+         <label for="customDropdown1"><h4>Type of car you drive</h4></label>
+        <select id="customDropdown1" class="medium" name='cartype'>
+        <option value="None" style="text-align:left;">Type of car</option>
+        <option value="15">Luxury Car</option>
+        <option value="25">Medium</option>
+        </select>
+        </div>
+       </div>
 
-<select name='state'>
-<option value="None">State</option>
-{% for state in states %}
-<option value="{{ state }}">{{ state }}</option>
-{% endfor %}
-</select>
-<input type='number' name='miles' placeholder='Miles / week' required/>
-<select name='car'>
-<option value="None">Car Type</option>
-<option value="15">Luxury Car</option>
-<option value="25">Medium</option>
-</select>
+     <div class="row">
+    <button type='submit' class="btn btn-success">Submit</button>
+     </div>
 
-<button type='submit' class="btn btn-success">Submit</button>
-
+    </fieldset>
+</form>
 {% endblock %}

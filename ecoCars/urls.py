@@ -15,6 +15,9 @@ urlpatterns = patterns('',
     url(r'^sources/', 'tabs.views.sources', name='sources'),
     url(r'^twitter/', 'tabs.views.twitter', name='twitter'),
     url(r'^calculator/', 'tabs.views.calculator', name='calculator'),
+    url(r'^calculated/', 'tabs.views.calculator', name='savings'),
+    url(r'^about/', 'tabs.views.about', name='about'),
+    url(r'^stations/', 'tabs.views.stations', name='stations'),
     #url(r'^admin/', include('admin.site.urls')),
 )
 

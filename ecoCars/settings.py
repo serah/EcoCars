@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'tabs',
     'ecoCars',
     'chartit',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,6 +87,11 @@ USE_TZ = True
 
 TEMPLATE_CONTEXT_PROCESSORS = (
             'django.core.context_processors.static',
+            'django.contrib.auth.context_processors.auth',
+)
+
+CONTEXT_PROCESSORS = (
+    'django.core.context_processors.csrf',
 )
 
 # Static files (CSS, JavaScript, Images)

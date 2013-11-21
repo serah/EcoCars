@@ -18,7 +18,7 @@
 <style>
     body
     {
-        background-image: url('/static/img/background2.jpg');
+    background-image: url('/static/img/background.jpg');
     }
     
     #itemHover
@@ -52,12 +52,14 @@
         margin-top: 40px;
         margin-left: 30px;
         margin-right: 30px;
+        padding:30px;
     }
     #container1
     {
         float: left;
         width: 100%;
         height: 100%;
+        padding:30px;
     }
     #col1
     {
@@ -94,14 +96,14 @@
           <a href="{% url 'home' %}" >
             Eco Cars
           </a>
-        </h1>   
+        </h1>
       </li>
     </ul>
     <section class="top-bar-section">
           <ul class="right">
-           <li><a href="" >Home</a></li>
+           <li><a href="{% url 'home' %}" >Home</a></li>
            <li class="divider"></li>
-           <li><a href="" >About</a></li>
+           <li><a href="{% url 'about' %}" >About</a></li>
         <li class="has-form">
       <form>
           <div class="row collapse">
@@ -211,7 +213,7 @@
                 </center>
                 <center>
                     <p>
-                        View more, what people talk about Electric cars around the world</p>
+                        What people talk about Electric cars around the world</p>
                 </center>
             </div>
             </a>
@@ -245,7 +247,7 @@
                 </center>
                 <center>
                     <p>
-                        Different sources of electricity in USA
+                        Comparison of different car models
                     </p>
                 </center>
             </div>
@@ -271,26 +273,6 @@
     </div>
     <!-- End Grid Section -->
 
-    <!-- Footer -->
-    <footer class="row">
-    <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-7 columns">
-          <p>&copy; 2013 ecocars</p>
-        </div>
-        <div class="large-5 columns">
-          <ul class="inline-list right">
-              
-            <li><a href="#">Development Team</a></li>
-            <li><a href="#">Reference</a></li>
-            <li><a href="#">Contact</a></li>
-           
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
     <script>
         document.write('<script src=/static/js/vendor/' +
   ('__proto__' in {} ? 'zepto' : 'jquery') +

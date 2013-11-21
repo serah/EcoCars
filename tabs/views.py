@@ -1,9 +1,11 @@
 # Create your views here.
 import twython
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect, StreamingHttpResponse
+from django.shortcuts import render_to_response, render
+from django.template import RequestContext
 from chartit import DataPool, Chart
 from tabs.models import CompanyWiseCarCount, GasRate
-from django import forms
+from tabs.forms import Save
 
 TWITTER_APP_KEY = 'F0kcD4RLRQSTAyOIXlgTbg'
 TWITTER_APP_KEY_SECRET = '5cztY0PmgmgYZ8qdmDZGyUc4VbzsnQOTa1b34nqdg'
@@ -58,9 +60,16 @@ def saved(request):
 def sources(request):
     return render_to_response('sources.html')
 
+def about(request):
+    return render_to_response('about.html')
+
+def stations(request):
+    return render_to_response('stations.html')
+
+
 def twitter(request):
     t = twython.Twython(app_key=TWITTER_APP_KEY,
-                        app_secret=TWITTERyp_APP_KEY_SECRET,
+                        app_secret=TWITTER_APP_KEY_SECRET,
                         oauth_token=TWITTER_ACCESS_TOKEN,
                         oauth_token_secret=TWITTER_ACCESS_TOKEN_SECRET)
 
@@ -81,11 +90,25 @@ def calculator(request):
     states = []
     for s in state_db:
         states.append(s['state'])
+    form = Save()
     if request.method == 'POST':
-        state = request.form['state']
-        miles = request.form['miles']
-        cartype = request.form['type']#keep value 25 or 15
-        price = db_session.query(GasRate).filter(GasRate.state == state).price
-        print price
-        cost = (miles/cartype) * 4 *4 * 52
-    return render_to_response('calculator.html', {'states':states})
+        form = Save(request.POST)
+        if form.is_valid():
+            form_state = form.cleaned_data['state']
+            miles = form.cleaned_data['miles']
+            cartype = form.cleaned_data['cartype']#keep value 25 or 15
+            print form_state,miles,cartype
+            for s in states:
+                if s == form_state:
+                    price_obj = GasRate.objects.raw("select id,price from tabs_gasrate where state = 'Texas';")
+            for p in price_obj:
+                price = p.price
+
+            cost = (float(miles)/float(cartype)) * price * 4 * 12
+            electric_cost = 0.04 * miles * 4 *12
+            savings = cost - electric_cost
+            return render_to_response('calculated.html',{'saving':savings})
+        else:
+            return render_to_response('calculator.html',{'states':states,'form':form}, context_instance = RequestContext(request))
+
+    return render(request, 'calculator.html', {'states':states,'form':form})
