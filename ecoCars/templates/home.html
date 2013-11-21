@@ -1,87 +1,92 @@
-
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  <title>Electric Cars | Home</title>
-
-  <!-- Included CSS Files -->
-  <link rel="stylesheet" href="/static/css/normalize.css">
-  <link rel="stylesheet" href="/static/css/foundation.css">
-  <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
-
-  <script src="/static/js/vendor/custom.modernizr.js"></script>
-  
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>Electric Cars | Home</title>
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/foundation.css">
+    <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <script src="/static/js/vendor/custom.modernizr.js"></script>
 </head>
 <style>
+    body
+    {
+        background-image: url('/static/img/background2.jpg');
+    }
     
-    body {
-      background-image:url('../static/img/grey_background.jpg');
-      }
-
- #itemHover{
-      border-radius:5px;
-}
-
- #itemHover {
-  border: 0px solid;
-  border-color:grey;
+    #itemHover
+    {
+        border-radius: 5px;
     }
-
- #itemHover:hover {
-  border: 3px solid;
-  border-color:  #CC1100;
-  opacity: 0.9
+    
+    #itemHover
+    {
+        border: 0px solid;
+        border-color: grey;
     }
-  .panel{
-     background-color:white;
+    
+    #itemHover:hover
+    {
+        border: 3px solid;
+        border-color: #CC1100;
+        opacity: 0.9;
     }
-   #panel-head{
-    color: #CC1100;
-    font-family: 'Days One', sans-serif;
+    .panel
+    {
+        background-color: white;
     }
-   .container{
-    margin-top:40px;
-    margin-left:30px;
-    margin-right:30px;
+    #panel-head
+    {
+        color: #CC1100;
+        font-family: 'Days One' , sans-serif;
     }
-    #container1{
-        float:left;
-        width:100%;
-        height:100%;
+    .container
+    {
+        margin-top: 40px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
-    #col1{
-        float:left;
-        width:33.3%;
-        height:100%;
-        margin-left:10px; 
+    #container1
+    {
+        float: left;
+        width: 100%;
+        height: 100%;
     }
-    #col2{
-        float:left;
-        width:30%;
-        height:100%;
-        margin-left:10px;
+    #col1
+    {
+        float: left;
+        width: 30%;
+        height: 100%;
+        margin-left: 30px;
         
     }
-    #col3{
-        float:left;
-        width:33.3%;
-        height:100%;
-        margin-left:10px;
-        margin-right:10px;
+    #col2
+    {
+        float: left;
+        width: 30%;
+        height: 100%;
+        margin-left: 20px;
+        margin-right:20px;
     }
-    
+    #col3
+    {
+        float: left;
+        width: 30%;
+        height: 100%;
+       
+        margin-right: 30px;
+    }
 </style>
 <body>
-
-  <!-- Header and Nav -->
-  <nav class="top-bar" style="top:0px;margin-top:0px;padding-top:0px;" >
+    <!-- Header and Nav -->
+    <nav class="top-bar" style="top: 0px; margin-top: 0px; padding-top: 0px;">
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
@@ -89,7 +94,7 @@
           <a href="{% url 'home' %}" >
             Eco Cars
           </a>
-        </h1>
+        </h1>   
       </li>
     </ul>
     <section class="top-bar-section">
@@ -113,196 +118,161 @@
     </section>
   </nav>
 
+    <div id="container1">
 
-  <div id="container1">
-      <div id="col1">
-     
-      <a href="{% url 'home' %}">
-          <div id="itemHover" class="panel">
-        <h5 id="panel-head">Count & Trends</h5>
-        <img id="itemHover1" width="300px" height="200px" src="../static/img/counts_trends.png" style="padding:10px;"></img>
-          <p><i>Total number of electric cars in USA and their trends</i></p>
-      </div>
-      </a>
+        <div id="col1">
+            <a href="{% url 'count' %}">
+            <div id="itemHover" onclick="CountsAndTrends.htm" class="panel">
+                <h5 id="panel-head">
+                    Count & Trends</h5>
+                <center>
+                    <img id="itemHover1" width="300px" height="300px" src="/static/img/counts_trends.png"
+                        style="padding:10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        <i>Total number of electric cars in USA and their trends</i></p>
+                </center>
+            </div>
+            </a>
 
-   
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Companies</h5>
-        <img id="itemHover1" width="100px" height="100px" src="/static/img/companies.jpg" style="padding:10px;"></img>
-        <p>
-          List of companies manufacturing electric vehicles
-        </p>
-    
-    </div>
+            <a href="{% url 'companies' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Companies</h5>
+                <center>
+                    <img id="itemHover1" width="150px" height="200px" src="/static/img/companies.jpg"
+                        style="padding: 10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        List of companies manufacturing electric vehicles
+                    </p>
+                </center>
+            </div>
+            </a>
 
-    
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Consumption</h5>
-        <img id="itemHover1" width="100px" height="100px" src="/static/img/consumption.png" style="padding:10px;"></img>
-        <p>Changes in consumption of electricity</p>
-      </div>
-   
-  
-      </div>
-  
-  
-   <div id="col2">
-      
-  <div id="itemHover" class="panel" >
-  <h5 id="panel-head">Demand in electricity</h5>
-  <img id="itemHover1" width="100px" height="100px" src="/static/img/demand_electricity.gif" style="padding:10px;"></img>
-  <p>Is there an effect on demand in electricity due to electric cars</p>
-  </div>
- 
-  
- 
- <div id="itemHover" class="panel" >
- <h5 id="panel-head">Ecars-Advantage</h5>
- <img id="itemHover1" width="100px" height="100px" src="/static/img/advantages.jpg" style="padding:10px;"></img>
- <p>Advantages of electric cars</p>
- </div>
- 
-   
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Electricity sources</h5>
-        <img id="itemHover1" width="100px" height="100px" src="/static/img/electricity_sources.png" style="padding:10px;" ></img>
-        <p> Different sources of electricity in USA
-        </p>
-      </div>
-     
-   </div>  
-       <div id="col3">
+            <a href="{% url 'advantages' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    eCars-Advantage</h5>
+                <center>
+                    <img id="itemHover1" width="170px" height="200px" src="/static/img/advantages.jpg"
+                        style="padding:10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Advantages of electric cars</p>
+                </center>
+            </div>
+            </a>
+        </div>
+
+        <div id="col2">
+
+            <a href="{% url 'demand' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Demand in electricity</h5>
+                <center>
+                    <img id="itemHover1" width="200px" height="120px" src="/static/img/demand_electricity.gif"
+                        style="padding: 10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Is there an effect on demand in electricity due to electric cars</p>
+                </center>
+            </div>
+            </a>
+
+            <a href="{% url 'calculator' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Know your Savings</h5>
+                <center>
+                    <img id="itemHover1" width="100px" height="100px" src="/static/img/dollar_money_cash_investment-512.png"
+                        style="padding: 10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Changes in consumption of electricity</p>
+                </center>
+            </div>
+            </a>
            
-         
-      <div id="itemHover" class="panel" >
-      <h5 id="panel-head">Total gas saved</h5>
-      <img id="itemHover1" width="100px" height="100px" src="/static/img/gas_saved.png" style="padding:10px;"></img>
-      <p>Yearly report of consumption of gasoline since the introduction of electric cars.</p>
-      </div>
-      
-      
-      
-      <div id="itemHover" class="panel" >
-      <h5 id="panel-head">Electricity sources</h5>
-      <img id="itemHover1" width="100px" height="100px" src="/static/img/electricity_sources.png" style="padding:10px;" align="middle"></img>
-      <p> Different sources of electricity in USA
-      </p>
-      </div>
-   
+            
+            <a href="{% url 'twitter' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Twitter feeds</h5>
+                <center>
+                    <img id="itemHover1" width="130px" height="100px" src="/static/img/twitter.png"
+                        style="padding:10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        View more, what people talk about Electric cars around the world</p>
+                </center>
+            </div>
+            </a>
+            </div>
 
-    
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Twitter feeds</h5>
-        <img id="itemHover1" width="100px" height="100px" src="/static/img/twitter.png" style="padding:10px;"></img>
-        <p>View more, what people talk about Electric cars around the world</p>
+
+        <div id="col3">
+
+            <a href="{% url 'saved' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Total gas saved</h5>
+                <center>
+                    <img id="itemHover1" width="120px" height="100px" src="/static/img/gas_saved.png"
+                        style="padding:10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Yearly report of consumption of gasoline since the introduction of electric cars.</p>
+                </center>
+            </div>
+            </a>
+
+            <a href="{% url 'mileage' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    eMileage</h5>
+                <center>
+                    <img id="itemHover1" width="250px" height="100px" src="/static/img/Gas-Meter.jpg"
+                        style="padding: 10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Different sources of electricity in USA
+                    </p>
+                </center>
+            </div>
+           </a>
+
+            <a href="{% url 'sources' %}">
+            <div id="itemHover" class="panel">
+                <h5 id="panel-head">
+                    Electricity sources</h5>
+                <center>
+                    <img id="itemHover1" width="150px" height="150px" src="/static/img/electricity_sources.png"
+                        style="padding: 10px;"></img>
+                </center>
+                <center>
+                    <p>
+                        Different sources of electricity in USA
+                    </p>
+                </center>
+            </div>
+            </a>
+            
+        </div>
     </div>
-   
-    </div>  
-       
-       </div>
+    <!-- End Grid Section -->
 
-  
-  <!-- End Header and Nav -->
-
-  <!-- Main Grid Section -->
-
-<!--  <div class="container">
-  
-    <div  class="large-4 columns" >
-      <a href="{% url 'home' %}">
-          <div id="itemHover" class="panel">
-        <h5 id="panel-head">Count & Trends</h5>
-        <img id="itemHover1" width="300px" height="1000px" src="../static/img/counts_trends.png" style="padding:10px;"></img>
-          <p><i>Total number of electric cars in USA and their trends</i></p>
-      </div>
-      </a>
-    </div>
-
-    <div  class="large-4 columns" >
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Companies</h5>
-        <img id="itemHover1" align='middle' width="200px" height="200px" src="../static/img/companies.jpg" style="padding:10px;"></img>
-        <p>
-          List of companies manufacturing electric vehicles
-        </p>
-      </div>
-    </div>
-
-    <div class="large-4 columns" >
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Consumption</h5>
-        <img id="itemHover1" width="100px" height="100px" src="../static/img/consumption.png" style="padding:10px;"></img>
-        <p>Changes in consumption of electricity</p>
-      </div>
-    </div>
-   
-   
-  
-  
-  <div class="small-4 columns" >
-  <div id="itemHover" class="panel" >
-  <h5 id="panel-head">Demand in electricity</h5>
-  <img id="itemHover1" width="100px" height="100px" src="../static/img/demand_electricity.gif" style="padding:10px;"></img>
-  <p>Is there an effect on demand in electricity due to electric cars</p>
-  </div>
-  </div>
-  
-  
- 
- <div class="large-4 columns" >
- <div id="itemHover" class="panel" >
- <h5 id="panel-head">Ecars-Advantage</h5>
- <img id="itemHover1" width="100px" height="100px" src="../static/img/advantages.jpg" style="padding:10px;"></img>
- <p>Advantages of electric cars</p>
- </div>
- </div>
- 
-
-
-        <div class="large-4 columns" >
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Electricity sources</h5>
-        <img id="itemHover1" width="100px" height="100px" src="../static/img/electricity_sources.png" style="padding:10px;" align="middle"></img>
-        <p> Different sources of electricity in USA
-        </p>
-      </div>
-      </div>
-      
-      <div class="large-4 columns" >
-      <div id="itemHover" class="panel" >
-      <h5 id="panel-head">Total gas saved</h5>
-      <img id="itemHover1" width="100px" height="100px" src="../static/img/gas_saved.png" style="padding:10px;"></img>
-      <p>Yearly report of consumption of gasoline since the introduction of electric cars.</p>
-      </div>
-      </div>
-      
-      <div class="large-4 columns" >
-      <div id="itemHover" class="panel" >
-      <h5 id="panel-head">Electricity sources</h5>
-      <img id="itemHover1" width="100px" height="100px" src="../static/img/electricity_sources.png" style="padding:10px;" align="middle"></img>
-      <p> Different sources of electricity in USA
-      </p>
-      </div>
-      </div>
-
-    <div class="large-8 columns" >
-      <div id="itemHover" class="panel" >
-        <h5 id="panel-head">Twitter feeds</h5>
-        <img id="itemHover1" width="100px" height="100px" src="../static/img/twitter.png" style="padding:10px;"></img>
-        <p>View more, what people talk about Electric cars around the world</p>
-    </div>
-    </div>
-    </div>
-
--->
-
-  <!-- End Grid Section -->
-
-
-
-  <!-- Footer -->
-
-  <footer class="row">
+    <!-- Footer -->
+    <footer class="row">
     <div class="large-12 columns">
       <hr />
       <div class="row">
@@ -311,24 +281,24 @@
         </div>
         <div class="large-5 columns">
           <ul class="inline-list right">
+              
             <li><a href="#">Development Team</a></li>
             <li><a href="#">Reference</a></li>
             <li><a href="#">Contact</a></li>
+           
           </ul>
         </div>
       </div>
     </div>
   </footer>
-  
-  <script>
-  document.write('<script src=/static/js/vendor/' +
+    <script>
+        document.write('<script src=/static/js/vendor/' +
   ('__proto__' in {} ? 'zepto' : 'jquery') +
-  '.js><\/script>')
-  </script>
-  <script src="../static/js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-
+  '.js><\/script>');
+    </script>
+    <script src="../static/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 </html>

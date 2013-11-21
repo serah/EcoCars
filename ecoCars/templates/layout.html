@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>EcoCars</title>
+    <link rel="stylesheet" href="/static/css/normalize.css" />
+    <link rel="stylesheet" href="/static/css/foundation.css" />
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
+        type='text/css'>
+    <script src="../static/js/vendor/custom.modernizr.js"></script>
+    <script type="text/javascript">
+        function setCurrentTab(selectedTab) {
+            $('li').removeClass('selected');
+            $('#' + selectedTab).addClass('selected');
+        }
+    </script>
+    <style>
+        body
+        {
+            font-family: 'Electrolize' , sans-serif;
+        }
+        li .panel1
+        {
+            border-radius: 10px;
+            font-family: 'Electrolize' , sans-serif !important;
+            width: 80%;
+            color: #00CC00;
+            background: url(/static/img/tabs.jpg);
+        }
+        .panel1:hover
+        {
+            font-weight: bold;
+            border-radius: 10px;
+            width: 80%;
+            background: #3C5A8A;
+        }
+        .button
+        {
+            background: #D9D9D9;
+        }
+        li:
+        {
+        }
+        #socialpanel
+        {
+            position: absolute;
+            background: url(/static/img/socialmedia-bg.gif) no-repeat left top;
+            width: 34px;
+            height: 192px;
+            padding: 25px 3px 0px 6px;
+            margin: 0px 0px 0px 0px;
+            z-index: 900;
+            overflow: hidden;
+            font: 12px Arial,Helvetica,sans-serif;
+        }
+        
+        .selected
+        {
+            font-weight: bolder;
+        }
+        .selected > .panel1
+        {
+            color: #d9d9d9;
+        }
+        
+        body
+        {
+            background: url(/static/img/white_plaster.png) repeat ;
+            box-shadow: 1px 1px 4px 1px #000000 inset;
+            max-height: 700px;
+        }
+        
+        
+        #socialpanel a
+        {
+            display: block;
+            margin: 4px 0px 4px 0px;
+        }
+        .panel1:active
+        {
+        }
+        .container
+        {
+            margin: 20px;
+            margin-right: 0px;
+        }
+        #container1
+        {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        #col1
+        {
+            margin: 0px;
+            float: left;
+            width: 28%;
+            min-height: 100%;
+            background-image: url('/static/img/background.jpg');
+           box-shadow: -3px 170px 4px 1px #000000 inset;
+        }
+        #col2
+        {
+            width: 72% !important;
+            position:relative;
+            float:right;
+            height: 100%;
+            margin-left: 0px;
+            min-height: 100px;
+             font: 11px Arial,Helvetica,sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="socialpanel" style="position: fixed; top: 200px; right: 0px;">
+        <a target="_blank" href="#/">
+            <img width="34" height="33" border="0" alt="blogger" src="/static/img/blogger.gif"></a>
+        <a target="_blank" href="#">
+            <img width="34" height="33" border="0" alt="facebook" src="/static/img/facebook.gif"></a>
+        <a target="_blank" href="#">
+            <img width="34" height="33" border="0" alt="linkedin" src="/static/img/linkedin.gif"></a>
+        <a target="_blank" href="#">
+            <img width="34" height="33" border="0" alt="twitter" src="/static/img/twitter.gif"></a>
+        <a target="_blank" href="#">
+            <img width="34" height="33" border="0" alt="youtube" src="/static/img/youtube.gif"></a>
+    </div>
+    <div id="container1">
+        <div id="col1">
+            <div class="container">
+                <ul class="side-nav">
+                    <img src="/static/img/green-car.png" height="200" width="200" /><br />
+                    <br />
+                    <li id="liCount" class="selected"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
+                    <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
+                    <li id="liAdvantages"><a href="Advantages.htm" class="panel1" onclick='javascript:setCurrentTab("liAdvantages");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
+                    <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
+                    <li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>
+                    <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
+                    <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Total Savings</a> </li>
+                    <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
+                    <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
+                        &nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div id="col2">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </div>
+    <script>
+
+        document.write('<script src=../static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
+    <script src="../static/js/foundation.min.js"></script>
+    <script>        $(document).foundation(); </script>
+</body>
+</html>

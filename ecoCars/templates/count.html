@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Eco Cars</title>
+
+
+  <script type="text/javascript" src="/static/Highcharts-3.0.7/js/highcharts.js"></script>
+  <script type="text/javascript" src="/static/js/exporting.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.js"></script>
+
+
+                    <strong>{% load chartit %}</strong>
+                    <strong>{{ cht|load_charts:"chart" }}</strong>
+
+</head>
+<body>
+    <div id="chart"></div>
+    <div class="chart"></div>
+</body>

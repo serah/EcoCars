@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+           {% for tweet, user in tweets.items %}
+        <p><b>{{ user }}: &nbsp</b>{{ tweet }}</p>
+        {% endfor %}
+
+
+{% endblock %}

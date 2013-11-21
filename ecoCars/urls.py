@@ -6,8 +6,15 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'tabs.views.home', name='home'),
-    url(r'^test/', 'tabs.views.test', name='test'),
-#    url(r'^$', include('tabs.urls')),
+    url(r'^count/', 'tabs.views.count', name='count'),
+    url(r'^companies/', 'tabs.views.companies', name='companies'),
+    url(r'^advantages/', 'tabs.views.advantages', name='advantages'),
+    url(r'^mileage/', 'tabs.views.mileage', name='mileage'),
+    url(r'^demand/', 'tabs.views.demand', name='demand'),
+    url(r'^saved/', 'tabs.views.saved', name='saved'),
+    url(r'^sources/', 'tabs.views.sources', name='sources'),
+    url(r'^twitter/', 'tabs.views.twitter', name='twitter'),
+    url(r'^calculator/', 'tabs.views.calculator', name='calculator'),
     #url(r'^admin/', include('admin.site.urls')),
 )
 
