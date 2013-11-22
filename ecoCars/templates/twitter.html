@@ -16,18 +16,18 @@ $('#wcont1b ul').jScrollPane();
     {% block style %}
 <style>
     #box{
-    margin: 100px 100px;
+    padding: 20px;
     }
-    #wcont1b ul{ max-height: 400px; overflow-y: scroll; }
+    #box ul{ max-height: 500px; overflow-y: scroll; }
 </style>
     {% endblock %}
 
 {% block body %}
-<div class="six columns" id="wcont1b" id="box" >
+<div class="six columns" id="box" >
 <ul class="pricing-table" >
-    <li class="title">Tweet tweet!</li>
+    <center><li class="title"><h1>Tweet tweet!</h1></li></center>
       {% for tweet, user in tweets.items %}
-        <li class="price"><b>{{ user }}: &nbsp</b>{{ tweet }}</li>
+        <li class="price" style="align:left;"><b><div style="color: #333333;">{{ user }}&nbsp : &nbsp</div></b>{{ tweet }}</li>
         {% endfor %}
 </ul>
 </div>

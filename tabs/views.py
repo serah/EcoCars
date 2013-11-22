@@ -45,6 +45,9 @@ def count(request):
 def advantages(request):
     return render_to_response('advantages.html')
 
+def references(request):
+    return render_to_response('references.html')
+
 def companies(request):
     return render_to_response('companies.html')
 

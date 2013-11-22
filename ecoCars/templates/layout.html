@@ -112,7 +112,7 @@ opacity: 0.9;
         {
             width: 75% !important;
             position: relative;
-            float: right;
+            float: left;
             height: 100%;
             margin-left: 0px;
             min-height: 900px;
@@ -137,24 +137,26 @@ opacity: 0.9;
                            <a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
                     <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
                            <a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
-                    <li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>
-                           <a href="{% url 'demand' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>
+                    <!--<li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>-->
+                           <!--<a href="{% url 'demand' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>-->
                     <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
                            <a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
                     <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
-                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Total Savings</a> </li>
+                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Gasoline Savings</a> </li>
                     <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
                            <a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
                     <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
                            <a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
                     <li id="liGasStations"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liGasStattions");'>
                            <a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Charging Stations</a> </li>
+                    <li id="liReferences"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liRefrences");'>
+                           <a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;>References</a> </li>
                 </ul>
             </div>
         </div>
 
         		<div id="col2">
-            <br />
+            <br /><br/>
             <div class="row">
                 <div style="float: right;">
                         <a href="{% url 'about' %}" >&nbsp About </a>
@@ -162,14 +164,13 @@ opacity: 0.9;
                 <div style="float: right;">
                     <a href="{% url 'home' %}">Home /</a>
                 </div>
+
             </div>
-
-
-        <div id="col2">
-            <hr/>
+                                <hr/>
             {% block body %}
             {% endblock %}
-        </div>
+</div>
+
     <script>
         document.write('<script src=/static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
     <script src="../static/js/foundation.min.js"></script>

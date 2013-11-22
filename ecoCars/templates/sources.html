@@ -1,17 +1,183 @@
-{% extends 'layout.html' %}
+﻿﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>EcoCars</title>
+    <link rel="stylesheet" href="../static/css/normalize.css" />
+    <link href="../static/css/Carousal.css" rel="stylesheet" type="text/css" />
+    <link type='text/css' href='../static/css/demo.css' rel='stylesheet' media='screen' />
+    <!-- Contact Form CSS files -->
+    <link type='text/css' href='../static/css/basic.css' rel='stylesheet' media='screen' />
+    <script src="../static/js/jquery.js" type="text/javascript"></script>
+    <script src="../static/js/basic.js" type="text/javascript"></script>
+    <link href="../static/css/basic.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/basic_ie.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../static/js/jquery.simplemodal.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../static/css/foundation.css" />
+    <script src="../static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
+        type='text/css'>
+    <script src="../static/js/vendor/custom.modernizr.js"></script>
+    <script type="text/javascript">
 
-{% block body %}
-                    <div class="large-12 columns" style="font: 14px Electrolize;">
+
+        function setCurrentTab(selectedTab) {
+            $('li').removeClass('selected');
+            $('#' + selectedTab).addClass('selected');
+        }
+
+
+
+    </script>
+    <style>
+ body
+        {
+            font-family: 'Electrolize' , sans-serif;
+			height: 900px;
+            max-height: 900px;
+        }
+
+        #itemHover
+{
+border: 3px solid;
+border-color: grey;
+background: white;
+border-radius: 5px;
+}
+
+#itemHover:hover
+{
+border: 3px solid;
+border-color: #CC1100;
+opacity: 0.9;
+}
+
+        li .panel1
+        {
+            border-radius: 10px;
+            font-family: 'Electrolize' , sans-serif !important;
+            width: 80%;
+            color: #00CC00;
+            background: url(/static/img/white_plaster.png) repeat;
+        }
+        .panel1:hover
+        {
+            font-weight: bold;
+            border-radius: 10px;
+            width: 80%;
+            background: #3C5A8A;
+        }
+        .button
+        {
+            background: #D9D9D9;
+        }
+        #socialpanel a
+        {
+            display: block;
+            margin: 4px 0px 4px 0px;
+        }
+        .panel1:active
+        {
+        }
+        .container
+        {
+            margin: 20px;
+            margin-right: 0px;
+        }
+        #container1
+        {
+            float: left;
+            width: 100%;
+            height: 100%;
+        }
+
+        .side-nav{
+            font-size:15px;
+        }
+         #col1
+        {
+            margin: 0px;
+			height: 100%;
+            float: left;
+            width: 25%;
+            min-height: 900px;
+            background: url(/static/img/white_plaster.png) repeat;
+            box-shadow: -3px 0px 4px 1px  #E5E4E2 inset;
+        }
+        #col2
+        {
+            width: 75% !important;
+            position: relative;
+            float: left;
+            height: 100%;
+            margin-left: 0px;
+            min-height: 900px;
+            font: 11px Arial,Helvetica,sans-serif;
+        }
+        #line{
+        width:70%;
+}
+    </style>
+</head>
+<body>
+        <div id="col1">
+            <div class="container" style="padding-left:50px;">
+                <ul class="side-nav">
+                    <img src="/static/img/green-car.png" height="200" width="200" /><br />
+                    <br /><hr id="line" />eMail, eShopping, eBiz... <br/> why not eCars?<hr id="line"/>
+                    <li id="liCount"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
+                         <a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
+                    <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
+                           <a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
+                    <li id="liAdvantages"><a href="Advantages.htm" class="panel1" onclick='javascript:setCurrentTab("liAdvantages");'>
+                           <a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
+                    <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
+                           <a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
+                    <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
+                           <a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
+                    <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
+                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Gasoline Savings</a> </li>
+                    <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
+                           <a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
+                    <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
+                           <a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                    <li id="liGasStations"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liGasStattions");'>
+                           <a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Charging Stations</a> </li>
+                    <li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>
+                           <a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;> References</a> </li>
+                </ul>
+            </div>
+        </div>
+        <div id="col2">
+                        <div class="row">
+                <div style="float: right;">
+                        <a href="{% url 'about' %}" >&nbsp About </a>
+                </div>
+                <div style="float: right;">
+                    <a href="{% url 'home' %}">Home /</a>
+                </div>
+
+            </div>
+
+            <br />
+            <br />
+            <hr />
+ 
+            <div class="large-12 columns" style="font: 14px Electrolize;">
                 <center>
                     <h4>
                         Sources of Electricity</h4>
                 </center>
-                <div id="itemHover" class="panel" style="background: #f2f2f2;" >
+                <div id="Div2" class="panel" style="background: #f2f2f2;" >
                     <center>
-                        <h3 style="font: 12px Electrolize;">
+                        <h3 style="font: 16px Electrolize;">
                             Major Sources
                         </h3>
-                       <h4><div style="font: 12px Electrolize;"> - Coal , Natural Gas , Nuclear - </div></h4>
+                       <h4><div style="font: 14px Electrolize;"> - Coal , Natural Gas , Nuclear - </div></h4>
                     </center>
                 </div>
             </div>
@@ -42,8 +208,9 @@
                     </div>
                 </div>
             </div>
-            <hr />
-
+            <br />
+            <br />
+            <br/>
             <div class="row">
                 <center>
                     <div id='table'>
@@ -252,24 +419,31 @@
                 </center>
             </div>
             <div id="basic-modal-content-1" style="display: none">
-                <div id="itemHover" class="panel">
+                <div id="Div4" class="panel">
                     <center>
-                        <img id="Img1" width="500px" height="450px" src="../static/img/chart.png" style="padding: 10px;"></img>
+                        <img id="Img1" width="600px" height="550px" src="../static/img/chart.png" style="padding: 10px;"></img>
                     </center>
                 </div>
             </div>
             <div id="basic-modal-content-2" style="display: none">
-                <div id="itemHover" class="panel">
+                <div id="Div6" class="panel">
                     <center>
-                        <img id="Img4" width="500px" height="450px" src="../static/img/Sources_Of_Electricity.png"
+                        <img id="Img3" width="600px" height="550px" src="../static/img/Sources_Of_Electricity.png"
                             style="padding: 10px;"></img>
                     </center>
                 </div>
             </div>
+            
             <!-- preload the images -->
             <div style='display: none'>
                 <img src="../static/img/x.png" />
             </div>
         </div>
     </div>
- {% endblock %}
+    <script>
+
+        document.write('<script src=../static/js/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>') </script>
+    <script src="../static/js/foundation.min.js"></script>
+    <script>        $(document).foundation(); </script>
+</body>
+</html>
