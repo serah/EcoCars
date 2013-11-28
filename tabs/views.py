@@ -18,29 +18,29 @@ def home(request):
 
 
 def count(request):
-    ds = DataPool(
-        series=
-        [{'options': {
-            'source': CompanyWiseCarCount.objects.all()},
-          'terms': [
-              'CompanyName',
-              'eleven']}
-        ])
-    cht = Chart(
-        datasource=ds,
-        series_options=
-        [{'options': {
-            'type': 'pie',
-            'stacking': False},
-          'terms': {
-              'CompanyName': [
-                  'eleven']
-          }}],
-        chart_options=
-        {'title': {
-            'text': 'Weather Data of Boston and Houston'}, })
+    #ds = DataPool(
+    #    series=
+    #    [{'options': {
+    #        'source': CompanyWiseCarCount.objects.all()},
+    #      'terms': [
+    #          'CompanyName',
+    #          'eleven']}
+    #    ])
+    #cht = Chart(
+    #    datasource=ds,
+    #    series_options=
+    #    [{'options': {
+    #        'type': 'pie',
+    #        'stacking': False},
+    #      'terms': {
+    #          'CompanyName': [
+    #              'eleven']
+    #      }}],
+    #    chart_options=
+    #    {'title': {
+    #        'text': 'Weather Data of Boston and Houston'}, })
 
-    return render_to_response('count.html', {'cht': cht})
+    return render_to_response('count.html')
 
 def advantages(request):
     return render_to_response('advantages.html')
