@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-CURRENT_DIR  = os.path.dirname(__file__)
+CURRENT_DIR = os.path.dirname(__file__)
 TEMPLATE_DIRS = (os.path.join(CURRENT_DIR, 'templates'),)
 STATICFILES_DIRS = (os.path.join(CURRENT_DIR, 'static'),)
 STATIC_ROOT = os.path.join(PROJECT_PATH, '../static')
@@ -99,9 +99,9 @@ CONTEXT_PROCESSORS = (
 
 STATIC_URL = '/static/'
 
-# Parse database configuration from $DATABASE_URL
-#import dj_database_url
-#DATABASES['default'] =  dj_database_url.config()
+ Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

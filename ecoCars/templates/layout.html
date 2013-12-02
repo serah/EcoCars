@@ -8,12 +8,13 @@
     <title>EcoCars</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/foundation.css" />
+    <link href="/static/css/Carousal.css" rel="stylesheet" type="text/css" />
     <link type="text/css" href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
         type='text/css'>
     <script src="/static/js/vendor/custom.modernizr.js"></script>
 
-    <link href="/static/css/basic.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/basic.css" rel="stylesheet" type="text/css"/>
     <link href="/static/css/basic_ie.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/demo.css" rel="stylesheet" type="text/css" />
     <script src="/static/js/basic.js" type="text/javascript"></script>
@@ -129,28 +130,16 @@ opacity: 0.9;
                 <ul class="side-nav">
                     <img src="/static/img/green-car.png" height="200" width="200" /><br />
                     <br /><hr id="line" />Car revolution<hr id="line"/>
-                    <li id="liCount"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
-                         <a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
-                    <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
-                           <a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
-                    <li id="liAdvantages"><a href="Advantages.htm" class="panel1" onclick='javascript:setCurrentTab("liAdvantages");'>
-                           <a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
-                    <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
-                           <a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
-                    <!--<li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>-->
-                           <!--<a href="{% url 'demand' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Demand</a> </li>-->
-                    <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
-                           <a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
-                    <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
-                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Gasoline Savings</a> </li>
-                    <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
-                           <a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
-                    <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
-                           <a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
-                    <li id="liGasStations"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liGasStattions");'>
-                           <a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;>Charging Stations</a> </li>
-                    <li id="liReferences"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liRefrences");'>
-                           <a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;>References</a> </li>
+                    <li><a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
+                    <li><a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
+                    <li><a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
+                    <li><a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
+                    <li><a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
+                    <li><a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Gasoline Savings</a> </li>
+                    <li><a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
+                    <li><a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                    <li><a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Charging Stations</a> </li>
+                    <li><a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;> References</a> </li>
                 </ul>
             </div>
         </div>
