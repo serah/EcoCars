@@ -23,7 +23,7 @@ $(function () {
                 plotShadow: false
             },
             title: {
-                text: 'Electric Cars 2013'
+                text: 'Electric Cars in USA - 2013 '
             },
             tooltip: {
         	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -44,7 +44,7 @@ $(function () {
             },
             series: [{
                 type: 'pie',
-                name: 'Browser share',
+                name: 'Electric cars',
 
                 data: [
                     {% for company in company_data %}
@@ -62,7 +62,7 @@ $(function () {
                 plotShadow: false
             },
             title: {
-                text: 'Chart 2'
+                text: 'Electric cars in USA - 2012'
             },
             tooltip: {
         	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -101,7 +101,7 @@ $(function () {
                 plotShadow: false
             },
             title: {
-                text: 'Chart 2'
+                text: 'Electric Cars in USA - 2010 and 2011'
             },
             tooltip: {
         	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
