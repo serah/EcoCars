@@ -29,3 +29,13 @@ class GasolineCarCount(models.Model):
     id = models.AutoField(primary_key=True)
     year = models.IntegerField()
     count = models.BigIntegerField()
+
+class GrowthPerYear(models.Model):
+    id = models.AutoField(primary_key=True)
+    year = models.IntegerField()
+    count = models.BigIntegerField()
+
+class ElectricitySources(models.Model):
+    id = models.AutoField(primary_key=True)
+    source = models.CharField(max_length=50)
+    percentage = models.FloatField()

@@ -3,7 +3,7 @@ import twython
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
 from chartit import DataPool, Chart
-from tabs.models import CompanyWiseCarCount, GasRate
+from tabs.models import CompanyWiseCarCount, GasRate, CarCount, Mileage, GasolineCarCount
 from tabs.forms import Save
 
 TWITTER_APP_KEY = 'F0kcD4RLRQSTAyOIXlgTbg'
@@ -17,7 +17,9 @@ def home(request):
 
 
 def count(request):
-     return render_to_response('count.html')
+    electric = CarCount.objects.filter()
+    gas = GasolineCarCount.objects.filter()
+    return render_to_response('count.html', {'electric': electric, 'gas': gas})
 
 def advantages(request):
     return render_to_response('advantages.html')
@@ -27,7 +29,6 @@ def references(request):
 
 def companies(request):
     companies = CompanyWiseCarCount.objects.filter()
-
     return render_to_response('companies.html', {'company_data': companies})
 
 def mileage(request):
@@ -78,7 +79,7 @@ def calculator(request):
         if form.is_valid():
             form_state = form.cleaned_data['state']
             miles = form.cleaned_data['miles']
-            cartype = form.cleaned_data['cartype']#keep value 25 or 15
+            cartype = form.cleaned_data['cartype']
             print form_state,miles,cartype
             for s in states:
                 if s == form_state:

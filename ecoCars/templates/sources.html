@@ -22,18 +22,61 @@
     <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
         type='text/css'>
     <script src="../static/js/vendor/custom.modernizr.js"></script>
-    <script type="text/javascript">
-
-
-        function setCurrentTab(selectedTab) {
-            $('li').removeClass('selected');
-            $('#' + selectedTab).addClass('selected');
-        }
-
-
-
-    </script>
     <style>
+<script type="text/javascript">
+$(function () {
+
+    	// Radialize the colors
+		Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+		    return {
+		        radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+		        stops: [
+		            [0, color],
+		            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+		        ]
+		    };
+		});
+
+		// Build the chart
+        $('#chart1').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Percentage Share in 2012'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(2) +' %';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Electricity sources',
+
+                data: [
+                    {% for company in company_data %}
+                    ['{{ company.CompanyName }}', {{ company.thirteen }}],
+                    {% endfor %}
+                ]
+            }]
+        });
+    });
+</script>
  body
         {
             font-family: 'Electrolize' , sans-serif;
@@ -129,26 +172,16 @@ opacity: 0.9;
                 <ul class="side-nav">
                     <img src="/static/img/green-car.png" height="200" width="200" /><br />
                     <br /><hr id="line" />Car revolution<hr id="line"/>
-                    <li id="liCount"><a href="CountsAndTrends.htm" class="panel1" onclick='javascript:setCurrentTab("liCount");'>
-                         <a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
-                    <li id="liCompanies"><a href="Companies.htm" class="panel1" onclick='javascript:setCurrentTab("liCompanies");'>
-                           <a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
-                    <li id="liAdvantages"><a href="Advantages.htm" class="panel1" onclick='javascript:setCurrentTab("liAdvantages");'>
-                           <a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
-                    <li id="liSavings"><a href="SavingsCalculator.htm" class="panel1" onclick='javascript:setCurrentTab("liSavings");'>
-                           <a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
-                    <li id="liSources"><a href="ElectricitySources.htm" class="panel1" onclick='javascript:setCurrentTab("liSources");'>
-                           <a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
-                    <li id="liTotalSavings"><a href="TotalSavings.htm" class="panel1" onclick='javascript:setCurrentTab("liTotalSavings");'>
-                           <a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Gasoline Savings</a> </li>
-                    <li id="liFeeds"><a href="TwitterFeeds.htm" class="panel1" onclick='javascript:setCurrentTab("liFeeds");'>
-                           <a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
-                    <li id="liMilleage"><a href="Milleage.htm" class="panel1" onclick='javascript:setCurrentTab("liMilleage");'>
-                           <a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
-                    <li id="liGasStations"><a href="stations.htm" class="panel1" onclick='javascript:setCurrentTab("liGasStattions");'>
-                           <a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Charging Stations</a> </li>
-                    <li id="liDemand"><a href="DemandAnalysis.htm" class="panel1" onclick='javascript:setCurrentTab("liDemand");'>
-                           <a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;> References</a> </li>
+                    <li><a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
+                    <li><a href="{% url 'companies' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Companies</a> </li>
+                    <li><a href="{% url 'advantages' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Advantages</a> </li>
+                    <li><a href="{% url 'calculator' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Know how much you save?</a> </li>
+                    <li><a href="{% url 'sources' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Electricity Sources</a> </li>
+                    <li><a href="{% url 'saved' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Gasoline Savings</a> </li>
+                    <li><a href="{% url 'twitter' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Twitter Feeds</a> </li>
+                    <li><a href="{% url 'mileage' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Mileage Comparison</a> </li>
+                    <li><a href="{% url 'stations' %}">&nbsp;&nbsp;&nbsp;&nbsp;> Charging Stations</a> </li>
+                    <li><a href="{% url 'references' %}">&nbsp;&nbsp;&nbsp;&nbsp;> References</a> </li>
                 </ul>
             </div>
         </div>
