@@ -1,6 +1,5 @@
 # Create your views here.
 import twython
-from django.http import HttpResponseRedirect, StreamingHttpResponse
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
 from chartit import DataPool, Chart
@@ -18,29 +17,7 @@ def home(request):
 
 
 def count(request):
-    #ds = DataPool(
-    #    series=
-    #    [{'options': {
-    #        'source': CompanyWiseCarCount.objects.all()},
-    #      'terms': [
-    #          'CompanyName',
-    #          'eleven']}
-    #    ])
-    #cht = Chart(
-    #    datasource=ds,
-    #    series_options=
-    #    [{'options': {
-    #        'type': 'pie',
-    #        'stacking': False},
-    #      'terms': {
-    #          'CompanyName': [
-    #              'eleven']
-    #      }}],
-    #    chart_options=
-    #    {'title': {
-    #        'text': 'Weather Data of Boston and Houston'}, })
-
-    return render_to_response('count.html')
+     return render_to_response('count.html')
 
 def advantages(request):
     return render_to_response('advantages.html')
@@ -49,7 +26,9 @@ def references(request):
     return render_to_response('references.html')
 
 def companies(request):
-    return render_to_response('companies.html')
+    companies = CompanyWiseCarCount.objects.filter()
+
+    return render_to_response('companies.html', {'company_data': companies})
 
 def mileage(request):
     return render_to_response('mileage.html')

@@ -14,27 +14,25 @@
         type='text/css'>
     <script src="/static/js/vendor/custom.modernizr.js"></script>
 
-    <link href="/static/css/basic.css" rel="stylesheet" type="text/css"/>
+    <script src="/static/js/basic.js" type="text/javascript"></script>
+    <link href="/static/css/basic.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/basic_ie.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/demo.css" rel="stylesheet" type="text/css" />
-    <script src="/static/js/basic.js" type="text/javascript"></script>
     <script src="/static/js/jquery.js" type="text/javascript"></script>
     <script src="/static/js/jquery.simplemodal.js" type="text/javascript"></script>
     <script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="script/jquery.jscrollpane.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="/static/js/highcharts.js"></script>
+
 
 {% block js %}
 {% endblock %}
 
-    <script type="text/javascript">
-        function setCurrentTab(selectedTab) {
-            $('li').removeClass('selected');
-            $('#' + selectedTab).addClass('selected');
-        }
-    </script>
+    <style>
     {% block style %}
     {% endblock %}
-    <style>
+
  body
         {
             font-family: 'Electrolize' , sans-serif;
