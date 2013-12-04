@@ -3,7 +3,7 @@ import twython
 from django.shortcuts import render_to_response, render
 from django.template import RequestContext
 from chartit import DataPool, Chart
-from tabs.models import CompanyWiseCarCount, GasRate, CarCount, Mileage, GasolineCarCount
+from tabs.models import CompanyWiseCarCount, GasRate, CarCount, Mileage, GasolineCarCount, GrowthPerYear, ElectricitySources
 from tabs.forms import Save
 
 TWITTER_APP_KEY = 'F0kcD4RLRQSTAyOIXlgTbg'
@@ -19,7 +19,8 @@ def home(request):
 def count(request):
     electric = CarCount.objects.filter()
     gas = GasolineCarCount.objects.filter()
-    return render_to_response('count.html', {'electric': electric, 'gas': gas})
+    growth = GrowthPerYear.objects.filter()
+    return render_to_response('count.html', {'electric': electric, 'gas': gas, 'growth': growth})
 
 def advantages(request):
     return render_to_response('advantages.html')
