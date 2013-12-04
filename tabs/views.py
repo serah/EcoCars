@@ -42,7 +42,8 @@ def saved(request):
     return render_to_response('saved.html')
 
 def sources(request):
-    return render_to_response('sources.html')
+    sources = ElectricitySources.objects.filter()
+    return render_to_response('sources.html', {'sources': sources})
 
 def about(request):
     return render_to_response('about.html')

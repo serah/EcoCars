@@ -8,10 +8,8 @@
     <title>EcoCars</title>
     <link rel="stylesheet" href="/static/css/normalize.css" />
     <link rel="stylesheet" href="/static/css/foundation.css" />
-    <link href="/static/css/Carousal.css" rel="stylesheet" type="text/css" />
     <link type="text/css" href="style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
-    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet'
-        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
     <script src="/static/js/vendor/custom.modernizr.js"></script>
 
     <script src="/static/js/basic.js" type="text/javascript"></script>
@@ -103,7 +101,7 @@ opacity: 0.9;
 			height: 100%;
             float: left;
             width: 25%;
-            min-height: 900px;
+            min-height: 1300px;
             background: url(/static/img/white_plaster.png) repeat;
             box-shadow: -3px 0px 4px 1px  #E5E4E2 inset;
         }
@@ -124,8 +122,8 @@ opacity: 0.9;
 </head>
 <body>
         <div id="col1">
-            <div class="container" style="padding-left:50px;">
-                <ul class="side-nav">
+            <div class="container" style="padding-left:20px;">
+                <ul class="side-nav" style="font-size:20;">
                     <img src="/static/img/green-car.png" height="200" width="200" /><br />
                     <br /><hr id="line" />Car revolution<hr id="line"/>
                     <li><a href="{% url 'count' %}">  &nbsp;&nbsp;&nbsp;&nbsp;> Count & Trends</a> </li>
