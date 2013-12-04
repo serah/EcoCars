@@ -71,6 +71,7 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
+#SOUTH_DATABASE_ADAPTERS = {'ecocars':'south.db.postgresql_psycopg2'}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
